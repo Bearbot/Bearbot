@@ -1,5 +1,7 @@
 # Bearbot
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/plusreed/Bearbot.svg)](https://greenkeeper.io/)
+
 Bearbot is a general-purpose Discord bot written in [Discord.js](https://discord.js.org).
 
 ## Run your own instance of Bearbot
