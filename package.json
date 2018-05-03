@@ -21,7 +21,7 @@
     "moment": "^2.22.1",
     "moment-timezone": "^0.5.16",
     "node-opus": "^0.2.7",
-    "npm": "^5.8.0",
+    "npm": "^6.0.0",
     "opusscript": "0.0.6",
     "public-ip": "^2.4.0",
     "request": "^2.85.0",
