@@ -1,0 +1,19 @@
+{
+    "BEAR_SWITCHED_LANG": "言語は日本語に変更されました。",
+    "BEAR_I18N_INACCURATE": "この翻訳はGoogle翻訳で行われました。 翻訳の不正確さについて事前にお詫び申し上げます。",
+    "BEAR_VOICE": {
+        "BEAR_JOIN_VC": "私は音声チャンネルに参加しました！",
+        "BEAR_LEAVE_VC": "私は音声チャンネルを去った！"
+    },
+    "BEAR_MOD": {
+        "BEAR_CONFIRM": "これをやりたいですか？",
+        "BEAR_BAN": "ユーザーは正常に禁止されました。",
+        "BEAR_SBAN": "ユーザーは正常にソフト禁止されました。",
+        "BEAR_KICK": "ユーザーは正常に蹴られました。"
+    },
+    "BEAR_HELP": {
+        "BEAR_HELP_MSG": "こんにちは、私はクマボットです！",
+        "BEAR_HELP_MSG_2": "私は一般目的のアクションのためのDiscordボットです。",
+        "BEAR_HELP_MSG_3": "デフォルトでは、モデレートツールと音楽再生のスイートが付属しています。"
+    }
+}

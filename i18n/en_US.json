@@ -1,0 +1,18 @@
+{
+    "BEAR_SWITCHED_LANG": "The language has been switched to English (United States).",
+    "BEAR_VOICE": {
+        "BEAR_JOIN_VC": "I have joined the voice channel!",
+        "BEAR_LEAVE_VC": "I have left the voice channel!"
+    },
+    "BEAR_MOD": {
+        "BEAR_CONFIRM": "Do you want to do this?",
+        "BEAR_BAN": "The user was successfully banned.",
+        "BEAR_SBAN": "The user was successfully soft-banned.",
+        "BEAR_KICK": "The user was successfully kicked."
+    },
+    "BEAR_HELP": {
+        "BEAR_HELP_MSG": "Hello, I'm Bearbot!",
+        "BEAR_HELP_MSG_2": "I'm a general purpose Discord bot for your server.",
+        "BEAR_HELP_MSG_3": "By default I come with a suite of moderation tools, and music playback."
+    }
+}

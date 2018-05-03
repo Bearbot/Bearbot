@@ -1,0 +1,18 @@
+{
+    "BEAR_SWITCHED_LANG": "Limba a fost schimbată în română (România).",
+    "BEAR_VOICE": {
+        "BEAR_JOIN_VC": "Am intrat în canalul de voce!",
+        "BEAR_LEAVE_VC": "Am părăsit canalul de voce!"
+    },
+    "BEAR_MOD": {
+        "BEAR_CONFIRM": "Dorești să faci asta?",
+        "BEAR_BAN": "Utilizatorul a fost restricționat cu succes.",
+        "BEAR_SBAN": "Utilizatorul a fost soft-banat cu succes.",
+        "BEAR_KICK": "Utilizatorul a fost dat afară cu succes."
+    },
+    "BEAR_HELP": {
+        "BEAR_HELP_MSG": "Salut, eu sunt Bearbot!",
+        "BEAR_HELP_MSG_2": "Sunt un bot de Discord cu scop general pentru server-ul tău.",
+        "BEAR_HELP_MSG_3": "În mod implicit, vin cu o suită de instrumente de moderare și redare de muzică."
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "BEAR_VOICE": {
+        "BEAR_JOIN_VC": "",
+        "BEAR_LEAVE_VC": ""
+    },
+    "BEAR_MOD": {
+        "BEAR_CONFIRM": "",
+        "BEAR_BAN": "",
+        "BEAR_SBAN": "",
+        "BEAR_KICK": ""
+    },
+    "BEAR_HELP": {
+        "BEAR_HELP_MSG": "",
+        "BEAR_HELP_MSG_2": "",
+        "BEAR_HELP_MSG_3": ""
+    }
+}
