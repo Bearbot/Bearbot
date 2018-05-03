@@ -1,5 +1,6 @@
 # Bearbot
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2267369eaca84cd68e72373266e7b72d)](https://app.codacy.com/app/reed/Bearbot?utm_source=github.com&utm_medium=referral&utm_content=plusreed/Bearbot&utm_campaign=badger)
 [![Greenkeeper badge](https://badges.greenkeeper.io/plusreed/Bearbot.svg)](https://greenkeeper.io/) [![Build Status](https://travis-ci.com/plusreed/Bearbot.svg?branch=master)](https://travis-ci.com/plusreed/Bearbot)
 
 Bearbot is a general-purpose Discord bot written in [Discord.js](https://discord.js.org).
