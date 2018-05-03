@@ -20,7 +20,7 @@ cd Bearbot
 npm i
 ```
 
-This will install all the dependencies. If you get an error, more than likely you do not have build tools installed.
+This will install all the dependencies. If you get an error, more than likely you do not have the build tools installed.
 
 Fill in the example config (configs/bot/bearbot.example.json) with your details (your bot token, your user ID, prefix, etc.).
 
