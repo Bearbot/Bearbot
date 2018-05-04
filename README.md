@@ -38,4 +38,4 @@ You could also use something like `forever`, `pm2`, or `nodemon` as a process ma
 
 ## License
 
-Licensed under the GNU AGPL 3.0. If you need a TL;DR on what this means, [this should help you](https://www.tldrlegal.com/l/agpl3).
+Licensed under the GNU AGPL 3.0. If you need a TL;DR on what this means, [this should help you out a bit](https://www.tldrlegal.com/l/agpl3).
