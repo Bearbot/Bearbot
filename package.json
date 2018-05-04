@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A general purpose Discord bot",
   "main": "bear.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plusreed/Bearbot.git"
+  },
   "scripts": {
     "test": "eslint . --ext .js",
     "bot": "node bear.js",
@@ -21,7 +25,6 @@
     "moment": "^2.22.1",
     "moment-timezone": "^0.5.16",
     "node-opus": "^0.2.7",
-    "npm": "^6.0.0",
     "opusscript": "0.0.6",
     "public-ip": "^2.4.0",
     "request": "^2.85.0",
