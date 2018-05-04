@@ -6,7 +6,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/plusreed/bearbot/badge.svg?targetFile=package.json)](https://snyk.io/test/github/plusreed/bearbot?targetFile=package.json)
 [![Discord Bots](https://discordbots.org/api/widget/status/412139349770108939.svg)](https://discordbots.org/bot/412139349770108939)
 
-Bearbot is a general-purpose Discord bot written in [Discord.js](https://discord.js.org). You can invite it by using [this link!](https://discordapp.com/api/oauth2/authorize?client_id=412139349770108939&permissions=372632694&scope=bot)
+Bearbot is a general-purpose Discord bot written in [Discord.js](https://discord.js.org). You can invite it by using [this link](https://discordapp.com/api/oauth2/authorize?client_id=412139349770108939&permissions=372632694&scope=bot).
 
 ## Run your own instance of Bearbot
 
@@ -38,4 +38,4 @@ You could also use something like `forever`, `pm2`, or `nodemon` as a process ma
 
 ## License
 
-Licensed under the GNU AGPL 3.0.
+Licensed under the GNU AGPL 3.0. If you need a TL;DR on what this means, [this should help you](https://www.tldrlegal.com/l/agpl3).
