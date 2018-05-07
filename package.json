@@ -24,7 +24,7 @@
     "mathjs": "^4.1.2",
     "moment": "^2.22.1",
     "moment-timezone": "^0.5.16",
-    "node-opus": "^0.2.7",
+    "node-opus": "^0.3.0",
     "opusscript": "0.0.6",
     "public-ip": "^2.4.0",
     "request": "^2.85.0",
