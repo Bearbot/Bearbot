@@ -4,10 +4,10 @@ exports.run = (client, message, args) => {
     message.channel.send('Gathering commit details...').then((msg) =>
         exec('git rev-parse --short HEAD', (err, stdout, stderr) => {
             if (err) console.log(err);
-            msg.edit(`Current Bearbot commit: ${stdout}`).then((msg) =>
+            msg.edit(`Current Bearbot commit: \`${stdout}\``).then((msg) =>
                 exec('git log -1 --pretty=%B | cat', (err, stdout, stderr) => {
                     if (err) console.log(err);
-                    msg.edit(`${msg.content}\nLast commit message: \`\`\`\n${stdout}\n\`\`\``).then((msg) =>
+                    msg.edit(`${msg.content}\nLast commit message:\n\`\`\`${stdout}\`\`\``).then((msg) =>
                         exec('git rev-parse --abbrev-ref HEAD', (err, stdout, stderr) => {
                             msg.edit(`${msg.content}\nCurrent branch: \`${stdout}\``);
                         })

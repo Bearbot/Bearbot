@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
     const request = require('request'),
-          base = 'https://api-quiz.hype.space';
+        base = 'https://api-quiz.hype.space';
 
     let TestMode = false;
 
