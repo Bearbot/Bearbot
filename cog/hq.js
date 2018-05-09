@@ -45,7 +45,6 @@ exports.run = (client, message, args) => {
 
     request(`${base}/shows/now/?type=hq`, (error, response, body) => {
         let hqBody = JSON.parse(body);
-        let nextShow = moment(hqBody.nextShowTime).tz('America/New_York').format('MM-DD-YY hh:mm:ss a z');
         let ActiveCheck;
         if (hqBody.active === false) {
             ActiveCheck = 'No';
@@ -55,7 +54,6 @@ exports.run = (client, message, args) => {
         let embed = new Discord.RichEmbed()
             .setAuthor(message.member.displayName, message.author.avatarURL)
             .addField('Game active', ActiveCheck)
-            .addField('Next game', nextShow)
             .addField('Prize', hqBody.nextShowPrize)
             .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
             .setColor(7435482)
