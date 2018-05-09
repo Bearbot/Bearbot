@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
             .addField('Next prize', ActiveGame.upcoming[0].prize, true)
             .addField('Stream URL', ActiveGame.broadcast.streams.source, false)
             .setColor(7435482)
-            .setFooter('HQ Trivia show statistics (beta)')
+            .setFooter('Next Game')
             .setTimestamp(ActiveGame.nextShowTime);
         message.channel.send(ActiveGame_Embed);
         message.channel.send('Running test_InactiveGame...');
@@ -29,7 +29,7 @@ exports.run = (client, message, args) => {
             .addField('Game active', NoActiveGame.active)
             .addField('Prize', NoActiveGame.nextShowPrize)
             .setColor(7435482)
-            .setFooter('HQ Trivia show statistics (beta)')
+            .setFooter('Next Game')
             .setTimestamp(NoActiveGame.nextShowTime);
         message.channel.send(InactiveGame_Embed);
         return;
@@ -49,7 +49,7 @@ exports.run = (client, message, args) => {
             .addField('Prize', hqBody.nextShowPrize)
             .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
             .setColor(7435482)
-            .setFooter('HQ Trivia show statistics (beta)')
+            .setFooter('Next Game')
             .setTimestamp(hqBody.nextShowTime);
 
         message.channel.send(embed);
