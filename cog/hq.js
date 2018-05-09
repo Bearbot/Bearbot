@@ -7,8 +7,8 @@ exports.run = (client, message, args) => {
     let TestMode = false;
 
     if (TestMode === true) {
-        const NoActiveGame = require('../configs/testjson/HQ_NoGame.json');
-        const ActiveGame = require('../configs/testjson/HQ_ActiveGame.json');
+        const NoActiveGame = require('../configs/testjson/HQ_NoGame.json'); // Not provided with source release.
+        const ActiveGame = require('../configs/testjson/HQ_ActiveGame.json'); // Not provided with source release.
 
         let A_nextShow = moment(ActiveGame.nextShowTime).tz('America/New_York').format('MM-DD-YY hh:mm:ss a z');
         let A_upcomingShow = moment(ActiveGame.upcoming[0].time).tz('America/New_York').format('MM-DD-YY hh:mm:ss a z');
@@ -46,22 +46,21 @@ exports.run = (client, message, args) => {
     request(`${base}/shows/now/?type=hq`, (error, response, body) => {
         let hqBody = JSON.parse(body);
         let nextShow = moment(hqBody.nextShowTime).tz('America/New_York').format('MM-DD-YY hh:mm:ss a z');
-        function ActiveCheck() {
-            if (hqBody.active === false) {
-                return 'No';
-            } else {
-                return 'Yes';
-            }
+        let ActiveCheck;
+        if (hqBody.active === false) {
+            ActiveCheck = 'No';
+        } else {
+            ActiveCheck = 'Yes';
         }
         let embed = new Discord.RichEmbed()
             .setAuthor(message.member.displayName, message.author.avatarURL)
-            .addField('Game active', ActiveCheck(), false)
-            .addField('Next game', nextShow, false)
-            .addField('Prize', hqBody.nextShowPrize, false)
+            .addField('Game active', ActiveCheck)
+            .addField('Next game', nextShow)
+            .addField('Prize', hqBody.nextShowPrize)
             .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
             .setColor(7435482)
             .setFooter('HQ Trivia show statistics (beta)')
-            .setTimestamp();
+            .setTimestamp(hqBody.nextShowTime);
 
         message.channel.send(embed);
     });
