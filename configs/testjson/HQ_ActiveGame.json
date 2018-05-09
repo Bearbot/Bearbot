@@ -1,0 +1,55 @@
+{
+    "active": true,
+    "atCapacity": false,
+    "showId": 2937,
+    "showType": "hq",
+    "startTime": "2018-01-26T02:00:00.000Z",
+    "nextShowTime": null,
+    "nextShowPrize": null,
+    "upcoming": [
+      {
+        "time": "2018-01-26T20:00:00.000Z",
+        "prize": "$2500"
+      },
+      {
+        "time": "2018-01-27T02:00:00.000Z",
+        "prize": "$2500"
+      },
+      {
+        "time": "2018-01-28T02:00:00.000Z",
+        "prize": "$2500"
+      }
+    ],
+    "prize": 2500,
+    "broadcast": {
+      "broadcastId": 43254,
+      "userId": 38752,
+      "title": "Wirecast stream",
+      "status": 1,
+      "state": "live",
+      "channelId": 100,
+      "created": "2018-01-26T01:55:13.000Z",
+      "started": "2018-01-26T01:55:13.000Z",
+      "ended": null,
+      "permalink": "https://hy.pe/b/De2",
+      "thumbnailData": null,
+      "tags": [],
+      "socketUrl": "https://ws-quiz.hype.space/ws/43254",
+      "streams": {
+        "source": "rtsp://edge-hq.hype.space:1935/live/wirecast_high",
+        "passthrough": "rtsp://edge-hq.hype.space:1935/live/wirecast_high",
+        "high": "rtsp://edge-hq.hype.space:1935/live/wirecast_high",
+        "medium": "rtsp://edge-hq.hype.space:1935/live/wirecast_medium",
+        "low": "rtsp://edge-hq.hype.space:1935/live/wirecast_low"
+      },
+      "streamUrl": "rtsp://edge-hq.hype.space:1935/live/wirecast_high",
+      "streamKey": "wirecast",
+      "relativeTimestamp": 1301628,
+      "links": {
+        "self": "/broadcasts/43254",
+        "transcript": "/broadcasts/43254/transcript",
+        "viewers": "/broadcasts/43254/viewers"
+      }
+    },
+    "broadcastFull": false
+}

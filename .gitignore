@@ -69,8 +69,5 @@ configs/bot/bearbot.json
 # ignore local rc
 rc/
 
-# ignore testjson
-configs/testjson/*.json
-
 # ignore bear_pics
 bear_pics/*
