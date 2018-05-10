@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
     let msg = args.slice(2).join(' ');
     
     if (typeof(user) === 'undefined') {
-        message.channel.send('I can\'t ban someone if you don\'t give me a person to ban.');
+        message.channel.send('I can\'t ban someone if you don\'t give me a person to ban.\nPlease use `b!help ban` to learn usage.');
         return;
     }
     if (!msg) {
