@@ -1,21 +1,11 @@
 exports.run = (client, message, args) => {
-    const exec = require('child_process').exec;
-
-    message.channel.send('Gathering commit details...').then((msg) =>
-        exec('git rev-parse --short HEAD', (err, stdout, stderr) => {
-            if (err) console.log(err);
-            msg.edit(`Current Bearbot commit: \`${stdout}\``).then((msg) =>
-                exec('git log -1 --pretty=%B | cat', (err, stdout, stderr) => {
-                    if (err) console.log(err);
-                    msg.edit(`${msg.content}\nLast commit message:\n\`\`\`${stdout}\`\`\``).then((msg) =>
-                        exec('git rev-parse --abbrev-ref HEAD', (err, stdout, stderr) => {
-                            msg.edit(`${msg.content}\nCurrent branch: \`${stdout}\``);
-                        })
-                    );
-                })
-            );
-        })
-    );
+    const { execSync } = require('child_process');
+    
+    let commithash = execSync('git rev-parse --short HEAD').toString().trim(),
+        commitmsg = execSync('git log -1 --pretty=%B | cat').toString().trim(),
+        branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
+    
+    message.channel.send(`Current Bearbot commit: ${commithash}\nLast commit message:\`\`\`${commitmsg}\`\`\`\nCurrent branch: \`${branch}\``);
 };
 
 exports.conf = {
