@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
         commitmsg = execSync('git log -1 --pretty=%B | cat').toString().trim(),
         branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
     
-    message.channel.send(`Current Bearbot commit: \`${commithash}\`\nLast commit message:\n\`\`\`${commitmsg}\`\`\`\nCurrent branch: \`${branch}\``);
+    message.channel.send(`Current Bearbot commit: \`${commithash}\`\nLast commit message:\n\`\`\`\n${commitmsg}\n\`\`\`\nCurrent branch: \`${branch}\``);
 };
 
 exports.conf = {
