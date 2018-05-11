@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
 
 exports.conf = {
     name: 'commit',
-    description: 'see the recent bearbot commit hash and message!',
+    description: 'see the current commit Bear is running on!',
     aliases: [],
     usage: '',
     enabled: true,
