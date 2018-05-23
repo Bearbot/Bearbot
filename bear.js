@@ -11,7 +11,7 @@ const bearScope = signale.scope('bear');
 
 require('./utilities/eventLoader')(client);
 
-const token = conf.testtoken;
+const token = conf.token;
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
@@ -37,7 +37,6 @@ let reload = (message, cmd) => {
         return;
     }
     bearScope.info({prefox: 'reload', message: `User ${message.author.tag} (uid: ${message.author.id}) reloaded cog ${cmd}`});
-    // console.log(`[reload] User ${message.author.tag} (uid: ${message.author.id}) reloaded cog ${cmd}`);
     message.channel.send(`reloaded ${cmd}`).then(
         response => response.delete(1000).catch(e => bearScope.error(e))
     ).catch(e => console.log(e));
