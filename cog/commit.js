@@ -1,26 +1,16 @@
 exports.run = (client, message, args) => {
-    const exec = require('child_process').exec;
-
-    message.channel.send('Gathering commit details...').then((msg) =>
-        exec('git rev-parse --short HEAD', (err, stdout, stderr) => {
-            if (err) console.log(err);
-            msg.edit(`Current Bearbot commit: \`${stdout}\``).then((msg) =>
-                exec('git log -1 --pretty=%B | cat', (err, stdout, stderr) => {
-                    if (err) console.log(err);
-                    msg.edit(`${msg.content}\nLast commit message:\n\`\`\`${stdout}\`\`\``).then((msg) =>
-                        exec('git rev-parse --abbrev-ref HEAD', (err, stdout, stderr) => {
-                            msg.edit(`${msg.content}\nCurrent branch: \`${stdout}\``);
-                        })
-                    );
-                })
-            );
-        })
-    );
+    const { execSync } = require('child_process');
+    
+    let hash = execSync('git rev-parse --short HEAD').toString().trim(),
+        msg = execSync('git log -1 --pretty=%B | cat').toString().trim(),
+        branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
+    
+    message.channel.send(`Current Bearbot commit: \`${hash}\`\nLast commit message:\n\`\`\`\n${msg}\n\`\`\`\nCurrent branch: \`${branch}\``);
 };
 
 exports.conf = {
     name: 'commit',
-    description: 'see the recent bearbot commit hash and message!',
+    description: 'see the current commit Bear is running on!',
     aliases: [],
     usage: '',
     enabled: true,
