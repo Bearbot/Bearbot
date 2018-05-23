@@ -1,3 +1,6 @@
+const signale = require('signale');
+const bearScope = signale.scope('bear');
+
 module.exports = (guild) => {
-    console.log(`[guildDelete] Seems like I was removed from the ${guild.name} guild.`);
+    bearScope.info({prefix: 'guildDelete', message: `Seems like I was removed from the ${guild.name} guild.`});
 };

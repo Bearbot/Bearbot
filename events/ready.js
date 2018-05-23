@@ -1,12 +1,24 @@
 const config = require('../configs/bot/bearbot.json');
 const dbl = require('dblposter');
+const signale = require('signale');
+
+// signale scopes
+const dblScope = signale.scope('dblposter');
+const bearScope = signale.scope('bear');
+
 module.exports = client => {
     const dblPoster = new dbl(config.dblkey, client);
-    console.log('[dblposter] Binding before bot startup...');
+
+    dblScope.info('Binding before bot startup.');
     dblPoster.bind();
-    console.log('[dblposter] Binded successfully');
-    console.log(`ALRIGHT YOU BIG BITCHES, I'M UP AS OF ${new Date}`);
-    console.log(`Logged in as ${client.user.tag}\nCurrently on ${client.guilds.size} servers with a total of ${client.users.size} users!`);
+    dblScope.success('Binded successfully');
+    
+    bearScope.info(`Up as of ${new Date}`);
+    bearScope.success(`Logged in as ${client.user.tag}! I have ${client.guilds.size} guilds and a total of ${client.users.size} users.`);
+    
+    // TODO: actually error check here
+    bearScope.watch({prefix: 'activity', message: 'Setting presence and game'});
     client.user.setStatus(config.defaultpresence);
     client.user.setActivity(config.defaultgame, { type: config.defaulttype });
+    bearScope.success({prefix: 'activity', message: 'Set presence successfully.'});
 };

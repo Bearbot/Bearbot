@@ -1,5 +1,10 @@
 const config = require('../configs/bot/bearbot.json');
 const fs = require('fs');
+const signale = require('signale');
+
+// set Signale scope
+const bearScope = signale.scope('bear');
+
 module.exports = message => {
     const client = message.client;
     const prefix = config.prefix;
@@ -22,9 +27,11 @@ module.exports = message => {
     }
 
     try {
-        console.log(`[message] Running ${command} for user ${message.author.tag} (uid: ${message.author.id}) in ${message.guild.name} (id: ${message.guild.id})`);
+        bearScope.watch({prefix: 'message', message: `Running ${command} for user ${message.author.tag} (uid: ${message.author.id})`});
+        // console.log(`[message] Running ${command} for user ${message.author.tag} (uid: ${message.author.id}) in ${message.guild.name} (id: ${message.guild.id})`);
         cmd.run(client, message, args);
     } catch (error) {
-        console.log(`[error] Command ${command} failed!\n${error}`);
+        bearScope.error({prefix: 'message', message: `Command ${command} failed.\n${error}`});
+        // console.log(`[error] Command ${command} failed!\n${error}`);
     }
 };

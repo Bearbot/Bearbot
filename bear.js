@@ -5,10 +5,13 @@ const client = new Discord.Client({
 });
 const conf = require('./configs/bot/bearbot.json');
 const fs = require('fs');
+const signale = require('signale');
+
+const bearScope = signale.scope('bear');
 
 require('./utilities/eventLoader')(client);
 
-const token = conf.token;
+const token = conf.testtoken;
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
@@ -33,9 +36,10 @@ let reload = (message, cmd) => {
         message.channel.send(`i couldn't load ${cmd}. error:\n\`\`\`${err}\`\`\``);
         return;
     }
-    console.log(`[reload] User ${message.author.tag} (uid: ${message.author.id}) reloaded cog ${cmd}`);
+    bearScope.info({prefox: 'reload', message: `User ${message.author.tag} (uid: ${message.author.id}) reloaded cog ${cmd}`});
+    // console.log(`[reload] User ${message.author.tag} (uid: ${message.author.id}) reloaded cog ${cmd}`);
     message.channel.send(`reloaded ${cmd}`).then(
-        response => response.delete(1000).catch(e => console.log(e))
+        response => response.delete(1000).catch(e => bearScope.error(e))
     ).catch(e => console.log(e));
 };
 exports.reload = reload;
@@ -55,7 +59,7 @@ let load = (message, cmd) => {
     }
     message.channel.send(`loaded ${cmd}`).then(
         response => response.delete(1000).catch(e => console.log(e))
-    ).catch(e => console.log(e));
+    ).catch(e => bearScope.error(e));
 };
 exports.load = load;
 
