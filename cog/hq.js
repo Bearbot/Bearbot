@@ -43,28 +43,28 @@ exports.run = (client, message, args) => {
         } else {
             ActiveCheck = 'Yes';
         }
-        let ActiveGame_Embed = new Discord.RichEmbed()
-            .setAuthor(message.member.displayName, message.author.avatarURL)
-            .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
-            .addField('Game active', ActiveCheck, true)
-            .addField('Prize', hqBody.prize, true)
-            .addField('Next prize', hqBody.upcoming[0].prize, true)
-            .addField('Stream URL', hqBody.broadcast.streams.source, false)
-            .setColor(7435482)
-            .setFooter('Next Game')
-            .setTimestamp(hqBody.nextShowTime);
-        let InactiveGame_Embed = new Discord.RichEmbed()
-            .setAuthor(message.member.displayName, message.author.avatarURL)
-            .addField('Game active', ActiveCheck)
-            .addField('Prize', hqBody.nextShowPrize)
-            .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
-            .setColor(7435482)
-            .setFooter('Next Game')
-            .setTimestamp(hqBody.nextShowTime);
 
         if (hqBody.active === false) {
+            let InactiveGame_Embed = new Discord.RichEmbed()
+                .setAuthor(message.member.displayName, message.author.avatarURL)
+                .addField('Game active', ActiveCheck)
+                .addField('Prize', hqBody.nextShowPrize)
+                .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
+                .setColor(7435482)
+                .setFooter('Next Game')
+                .setTimestamp(hqBody.nextShowTime);
             message.channel.send(InactiveGame_Embed);
         } else if (hqBody.active === true) {
+            let ActiveGame_Embed = new Discord.RichEmbed()
+                .setAuthor(message.member.displayName, message.author.avatarURL)
+                .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
+                .addField('Game active', ActiveCheck, true)
+                .addField('Prize', hqBody.prize, true)
+                .addField('Next prize', hqBody.upcoming[0].prize, true)
+                .addField('Stream URL', hqBody.broadcast.streams.source, false)
+                .setColor(7435482)
+                .setFooter('Next Game')
+                .setTimestamp(hqBody.nextShowTime);
             message.channel.send(ActiveGame_Embed);
         } else {
             message.channel.send('I got a response from the HQ API that I didn\'t understand, sorry about that. You should try again later.');
