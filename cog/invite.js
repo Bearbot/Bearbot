@@ -1,5 +1,6 @@
+const { client_id } = require('../configs/bot/bearbot.json');
 exports.run = (client, message, args) => {
-    message.reply('<https://discordapp.com/api/oauth2/authorize?client_id=412139349770108939&permissions=372632694&scope=bot>');
+    message.reply(`<https://discordapp.com/api/oauth2/authorize?client_id=${client_id}&permissions=372632694&scope=bot>`);
 };
 
 exports.conf = {

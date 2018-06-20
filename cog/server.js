@@ -1,5 +1,6 @@
+const { support_server } = require('../configs/bot/bearbot.json');
 exports.run = (client, message, args) => {
-    message.reply('https://discord.gg/tSV3yxm');
+    message.reply(support_server);
 };
 
 exports.conf = {
