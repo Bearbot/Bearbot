@@ -15,7 +15,7 @@ exports.run = (client, message, args) => {
             .setAuthor(message.member.displayName, message.author.avatarURL)
             .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
             .addField('Game active', ActiveGame.active, true)
-            .addField('Prize', ActiveGame.prize, true)
+            .addField('Prize', `$${ActiveGame.prize.toLocaleString()}`, true)
             .addField('Next prize', ActiveGame.upcoming[0].prize, true)
             .addField('Stream URL', ActiveGame.broadcast.streams.source, false)
             .setColor(7435482)
@@ -59,7 +59,7 @@ exports.run = (client, message, args) => {
                 .setAuthor(message.member.displayName, message.author.avatarURL)
                 .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
                 .addField('Game active', ActiveCheck, true)
-                .addField('Prize', hqBody.prize, true)
+                .addField('Prize', `$${hqBody.prize.toLocaleString()}`, true)
                 .addField('Next prize', hqBody.upcoming[0].prize, true)
                 .addField('Stream URL', hqBody.broadcast.streams.source, false)
                 .setColor(7435482)
@@ -67,7 +67,7 @@ exports.run = (client, message, args) => {
                 .setTimestamp(hqBody.nextShowTime);
             message.channel.send(ActiveGame_Embed);
         } else {
-            message.channel.send('I got a response from the HQ API that I didn\'t understand, sorry about that. You should try again later.');
+            message.channel.send('I got a response from the HQ Trivia API that I didn\'t understand, sorry about that. You should try again later.');
         }
     });
 };
