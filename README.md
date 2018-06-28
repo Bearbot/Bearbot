@@ -9,6 +9,10 @@
 
 Bearbot is a general-purpose Discord bot written in [Discord.js](https://discord.js.org). You can invite it by using [this link](https://discordapp.com/api/oauth2/authorize?client_id=412139349770108939&permissions=372632694&scope=bot).
 
+## Keeping up with Bearbot development
+
+Thanks to [Atlassian](https://atlassian.com), Bearbot has it's own JIRA and Confluence space. You can join [here](https://bearbot.atlassian.net) and keep up with Bearbot's development!
+
 ## Run your own instance of Bearbot
 
 You will need the following:
