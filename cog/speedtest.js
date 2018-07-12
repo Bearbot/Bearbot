@@ -2,13 +2,12 @@ const config = require('../configs/bot/bearbot.json');
 exports.run = (client, message, args) => {
     const publicIp = require('public-ip');
     const exec = require('child_process').exec;
-    const mathjs = require('mathjs');
 
     function getRandomIPInt() {
-        let int1 = mathjs.randomInt(0, 255).toString(),
-            int2 = mathjs.randomInt(0, 255).toString(),
-            int3 = mathjs.randomInt(0, 255).toString(),
-            int4 = mathjs.randomInt(0, 255).toString();
+        let int1 = Math.floor(Math.random() * 256).toString(),
+            int2 = Math.floor(Math.random() * 256).toString(),
+            int3 = Math.floor(Math.random() * 256).toString(),
+            int4 = Math.floor(Math.random() * 256).toString();
         return `${int1}.${int2}.${int3}.${int4}`;
     }
 
