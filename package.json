@@ -27,7 +27,7 @@
     "public-ip": "^2.4.0",
     "request": "^2.85.0",
     "signale": "^1.1.0",
-    "uws": "^10.148.0",
+    "uws": "^99.0.0",
     "vm2": "^3.5.2"
   },
   "devDependencies": {
