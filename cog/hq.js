@@ -38,7 +38,7 @@ exports.run = (client, message, args) => {
     request(`${base}/shows/now/?type=hq`, (error, response, body) => {
         let hqBody = JSON.parse(body);
         let ActiveCheck;
-	let upcomingGameType = hqbody.upcoming[0].vertical;
+	let upcomingGameType = hqBody.upcoming[0].vertical;
 	let currentGameType = hqBody.vertical;
 	/**
 	 * Parse the HQ vertical.
