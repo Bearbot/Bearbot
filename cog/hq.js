@@ -77,7 +77,7 @@ exports.run = (client, message, args) => {
             let ActiveGame_Embed = new Discord.RichEmbed()
                 .setAuthor(message.member.displayName, message.author.avatarURL)
                 .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
-                .addField('Game active', ActiveCheck, true);
+                .addField('Game active', ActiveCheck, true)
 		.addField('Game type', parseHQVertical(hqBody.vertical), true)
                 .addField('Prize', `$${hqBody.prize.toLocaleString()}`, true)
                 .addField('Next prize', hqBody.upcoming[0].prize, true)
