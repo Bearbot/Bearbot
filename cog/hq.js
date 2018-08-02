@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
             .addField('Next prize', ActiveGame.upcoming[0].prize, true)
             .addField('Stream URL', ActiveGame.broadcast.streams.source, false)
             .setColor(7435482)
-).setFooter('Next Game')
+	.setFooter('Next Game')
             .setTimestamp(ActiveGame.nextShowTime);
         message.channel.send(ActiveGame_Embed);
         message.channel.send('Running test_InactiveGame...');
