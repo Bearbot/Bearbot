@@ -38,6 +38,24 @@ exports.run = (client, message, args) => {
     request(`${base}/shows/now/?type=hq`, (error, response, body) => {
         let hqBody = JSON.parse(body);
         let ActiveCheck;
+        let upcomingGameType = hqBody.upcoming[0].vertical;
+        let currentGameType = hqBody.vertical;
+        /**
+	 * Parse the HQ vertical.
+	 * @param {String} vertical - The HQ vertical to parse.
+	 * @return {String} The parsed vertical.
+	 */
+        function parseHQVertical(vertical) {
+            switch(vertical) {
+            case 'sports':
+                return 'HQ Sports';
+            case 'general':
+                return 'HQ Trivia';
+            default:
+                return 'Unknown'; 
+            }
+        }
+	
         if (hqBody.active === false) {
             ActiveCheck = 'No';
         } else {
@@ -49,6 +67,7 @@ exports.run = (client, message, args) => {
                 .setAuthor(message.member.displayName, message.author.avatarURL)
                 .addField('Game active', ActiveCheck)
                 .addField('Prize', hqBody.nextShowPrize)
+                .addField('Game type', parseHQVertical(hqBody.nextShowVertical))
                 .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
                 .setColor(7435482)
                 .setFooter('Next Game')
@@ -59,6 +78,7 @@ exports.run = (client, message, args) => {
                 .setAuthor(message.member.displayName, message.author.avatarURL)
                 .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
                 .addField('Game active', ActiveCheck, true)
+                .addField('Game type', parseHQVertical(hqBody.vertical), true)
                 .addField('Prize', `$${hqBody.prize.toLocaleString()}`, true)
                 .addField('Next prize', hqBody.upcoming[0].prize, true)
                 .addField('Stream URL', hqBody.broadcast.streams.source, false)
@@ -67,7 +87,7 @@ exports.run = (client, message, args) => {
                 .setTimestamp(hqBody.nextShowTime);
             message.channel.send(ActiveGame_Embed);
         } else {
-            message.channel.send('I got a response from the HQ Trivia API that I didn\'t understand, sorry about that. You should try again later.');
+            message.channel.send('Received unknown response from HQ Trivia API.');
         }
     });
 };
