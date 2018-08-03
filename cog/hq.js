@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
             .addField('Next prize', ActiveGame.upcoming[0].prize, true)
             .addField('Stream URL', ActiveGame.broadcast.streams.source, false)
             .setColor(7435482)
-	.setFooter('Next Game')
+            .setFooter('Next Game')
             .setTimestamp(ActiveGame.nextShowTime);
         message.channel.send(ActiveGame_Embed);
         message.channel.send('Running test_InactiveGame...');
@@ -38,23 +38,23 @@ exports.run = (client, message, args) => {
     request(`${base}/shows/now/?type=hq`, (error, response, body) => {
         let hqBody = JSON.parse(body);
         let ActiveCheck;
-	let upcomingGameType = hqBody.upcoming[0].vertical;
-	let currentGameType = hqBody.vertical;
-	/**
+        let upcomingGameType = hqBody.upcoming[0].vertical;
+        let currentGameType = hqBody.vertical;
+        /**
 	 * Parse the HQ vertical.
 	 * @param {String} vertical - The HQ vertical to parse.
 	 * @return {String} The parsed vertical.
 	 */
-	function parseHQVertical(vertical) {
-		switch(vertical) {
-			case "sports":
-				return "HQ Sports";
-			case "general":
-				return "HQ Trivia";
-			default:
-				return "Unknown"; 
-		}
-	}
+        function parseHQVertical(vertical) {
+            switch(vertical) {
+            case 'sports':
+                return 'HQ Sports';
+            case 'general':
+                return 'HQ Trivia';
+            default:
+                return 'Unknown'; 
+            }
+        }
 	
         if (hqBody.active === false) {
             ActiveCheck = 'No';
@@ -67,7 +67,7 @@ exports.run = (client, message, args) => {
                 .setAuthor(message.member.displayName, message.author.avatarURL)
                 .addField('Game active', ActiveCheck)
                 .addField('Prize', hqBody.nextShowPrize)
-		.addField('Game type', parseHQVertical(hqBody.nextShowVertical))
+                .addField('Game type', parseHQVertical(hqBody.nextShowVertical))
                 .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
                 .setColor(7435482)
                 .setFooter('Next Game')
@@ -78,7 +78,7 @@ exports.run = (client, message, args) => {
                 .setAuthor(message.member.displayName, message.author.avatarURL)
                 .setThumbnail('https://plusreed.com/assets/bear/HQ.png')
                 .addField('Game active', ActiveCheck, true)
-		.addField('Game type', parseHQVertical(hqBody.vertical), true)
+                .addField('Game type', parseHQVertical(hqBody.vertical), true)
                 .addField('Prize', `$${hqBody.prize.toLocaleString()}`, true)
                 .addField('Next prize', hqBody.upcoming[0].prize, true)
                 .addField('Stream URL', hqBody.broadcast.streams.source, false)
