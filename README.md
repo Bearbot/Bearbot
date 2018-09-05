@@ -26,7 +26,7 @@ You will need the following:
 Do the following:
 
 ```shell
-git clone https://github.com/plusreed/Bearbot
+git clone https://github.com/Bearbot/Bearbot
 cd Bearbot
 npm i
 ```
