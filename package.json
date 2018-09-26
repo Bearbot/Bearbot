@@ -1,7 +1,7 @@
 {
   "name": "bearbot",
   "version": "1.0.0",
-  "description": "A general purpose Discord bot",
+  "description": "A general purpose Discord bot.",
   "main": "bear.js",
   "repository": {
     "type": "git",
