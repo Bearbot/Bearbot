@@ -1,8 +1,8 @@
 # Bearbot
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2267369eaca84cd68e72373266e7b72d)](https://app.codacy.com/app/reed/Bearbot?utm_source=github.com&utm_medium=referral&utm_content=plusreed/Bearbot&utm_campaign=badger)
-[![Greenkeeper badge](https://badges.greenkeeper.io/plusreed/Bearbot.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.com/plusreed/Bearbot.svg?branch=master)](https://travis-ci.com/plusreed/Bearbot)
+[![Greenkeeper badge](https://badges.greenkeeper.io/Bearbot/Bearbot.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.com/Bearbot/Bearbot.svg?branch=master)](https://travis-ci.com/Bearbot/Bearbot)
 [![Known Vulnerabilities](https://snyk.io/test/github/plusreed/bearbot/badge.svg?targetFile=package.json)](https://snyk.io/test/github/plusreed/bearbot?targetFile=package.json)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fplusreed%2FBearbot.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fplusreed%2FBearbot?ref=badge_shield)
 [![Discord Bots](https://discordbots.org/api/widget/status/412139349770108939.svg)](https://discordbots.org/bot/412139349770108939)
@@ -26,7 +26,7 @@ You will need the following:
 Do the following:
 
 ```shell
-git clone https://github.com/plusreed/Bearbot
+git clone https://github.com/Bearbot/Bearbot
 cd Bearbot
 npm i
 ```
