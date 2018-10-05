@@ -3,7 +3,7 @@ const client = new Discord.Client({
     autoReconnect: true,
     disableEveryone: true
 });
-const conf = require('./configs/bot/bearbot.json');
+const conf = require('./configs/bot/bearbot.json'); // TODO: Remove this after env PR has passed reviews.
 const fs = require('fs');
 const signale = require('signale');
 
@@ -11,7 +11,7 @@ const bearScope = signale.scope('bear');
 
 require('./utilities/eventLoader')(client);
 
-const token = conf.token;
+const token = process.env.BEAR_TOKEN;
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
