@@ -1,12 +1,9 @@
 {
-    "token": "",
-    "dblkey": "",
     "prefix": "",
     "owner": "",
     "client_id": "",
     "support_server": "",
     "defaultgame": "",
     "defaultpresence": "",
-    "defaulttype": "",
-    "lfmkey": ""
+    "defaulttype": ""
 }
