@@ -33,7 +33,10 @@ npm i
 
 This will install all the dependencies. If you get an error, more than likely you do not have the build tools installed.
 
-Fill in the example config (`./configs/bot/bearbot.example.json`) with your details (your bot token, your user ID, prefix, etc.), then rename it to `bearbot.json`.
+Fill in the example config (`./configs/bot/bearbot.example.json`) with the specified details (your user ID, prefix, etc.), then rename it to `bearbot.json`. **Then**, set these environment variables:
+* BEAR_TOKEN
+* BEAR_LEM_KEY
+* BEAR_DBL_KEY
 
 You'll also need `speedtest-cli` and `cat` (so, a Linux system or a Windows system with UNIX tools will work fine).
 
