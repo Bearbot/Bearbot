@@ -1,9 +1,10 @@
-const config = require('../configs/bot/bearbot.json'),
-    base = 'http://ws.audioscrobbler.com/2.0',
-    key = config.lfmkey,
-    request = require('request'),
-    discord = require('discord.js');
+const base = 'http://ws.audioscrobbler.com/2.0';
+const key = process.env.BEAR_LFM_KEY;
+const request = require('request');
+const discord = require('discord.js');
+
 let user;
+
 exports.run = (client, message, args) => {
 
     let validArgs = [
