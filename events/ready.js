@@ -7,7 +7,7 @@ const dblScope = signale.scope('dblposter');
 const bearScope = signale.scope('bear');
 
 module.exports = client => {
-    const dblPoster = new dbl(config.dblkey, client);
+    const dblPoster = new dbl(process.env.BEAR_DBL_KEY, client);
 
     dblScope.info('Binding before bot startup.');
     dblPoster.bind();
