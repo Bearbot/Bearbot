@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
                 return;
             } else {
                 message.channel.send('Error');
-                lfmScope.error(err);
+                lfmScope.error({ prefix: 'scrobbling', message: err });
                 break;
             }
         } finally {
