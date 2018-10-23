@@ -39,7 +39,7 @@ let reload = (message, cmd) => {
     bearScope.info({prefox: 'reload', message: `User ${message.author.tag} (uid: ${message.author.id}) reloaded cog ${cmd}`});
     message.channel.send(`reloaded ${cmd}`).then(
         response => response.delete(1000).catch(e => bearScope.error(e))
-    ).catch(e => console.log(e));
+    ).catch(e => bearScope.error(e));
 };
 exports.reload = reload;
 
@@ -57,7 +57,7 @@ let load = (message, cmd) => {
         return;
     }
     message.channel.send(`loaded ${cmd}`).then(
-        response => response.delete(1000).catch(e => console.log(e))
+        response => response.delete(1000).catch(e => bearScope.error(e))
     ).catch(e => bearScope.error(e));
 };
 exports.load = load;
