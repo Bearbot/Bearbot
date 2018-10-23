@@ -1,3 +1,4 @@
+const kickScope = require('signale').scope('kick');
 exports.run = (client, message, args) => {
     let can_kick = message.channel.permissionsFor(message.member).has('KICK_MEMBERS', true);
     let user = message.mentions.members.first();
@@ -19,7 +20,7 @@ exports.run = (client, message, args) => {
         }
         user.kick(msg);
         message.channel.send('<:tickYes:315009125694177281> Done! User kicked.').then(
-            msg => msg.delete(1000).catch(e => console.log(e))
+            msg => msg.delete(1000).catch(e => kickScope.error(e))
         );
         return;
     } else {
