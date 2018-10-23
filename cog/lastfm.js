@@ -3,7 +3,7 @@ const config = require('../configs/bot/bearbot.json'),
     key = config.lfmkey,
     request = require('request'),
     discord = require('discord.js'),
-    signale = require('signale.js'),
+    signale = require('signale'),
     lfmScope = signale.scope('lfm');
 let user;
 exports.run = (client, message, args) => {
