@@ -1,9 +1,8 @@
+const sayScope = require('signale').scope('say');
 exports.run = (client, message, args) => {
-    message.channel.startTyping();
     let repeat = args.join(' ');
     message.channel.send(repeat);
-    message.channel.stopTyping();
-    message.delete().catch(e => console.log(`Couldn't delete message, ${e}`));
+    message.delete().catch(e => sayScope.error(`Couldn't delete message, ${e}`));
 };
 
 exports.conf = {
