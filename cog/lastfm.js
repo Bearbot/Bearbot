@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
                 return;
             } else {
                 message.channel.send('Error');
-                lfmScope.error({ prefix: 'lfm', message: err });
+                lfmScope.error(err);
                 break;
             }
         } finally {
@@ -55,7 +55,7 @@ exports.run = (client, message, args) => {
                         message.channel.send('That user does not exist.');
                     } else {
                         message.channel.send('An error occurred. The Last.fm API may not be responding.');
-                        lfmScope.error({ prefix: 'lfm', message: err });
+                        lfmScope.error({ prefix: 'scrobbling', message: err });
                     }
                 }
             });
@@ -73,7 +73,7 @@ exports.run = (client, message, args) => {
             fs.writeFile(`./configs/users/${message.author.id}.json`, json, (err) => {
                 if (err) {
                     message.channel.send('Something happened.');
-                    lfmScope.error({ prefix: 'lfm', message: err });
+                    lfmScope.error({ prefix: 'set', message: err });
                 } else {
                     message.channel.send(`Your Last.fm username has been set to \`${args[1]}\`.`);
                 }
@@ -91,7 +91,7 @@ exports.run = (client, message, args) => {
                 return;
             } else {
                 message.channel.send('Error');
-                lfmScope.error({ prefix: 'lfm', message: err });
+                lfmScope.error({ prefix: 'profile', message: err });
                 break;
             }
         } finally {
