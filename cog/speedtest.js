@@ -1,4 +1,7 @@
 const config = require('../configs/bot/bearbot.json');
+const signale = require('signale');
+const speedtestScope = signale.scope('speedtest');
+
 exports.run = (client, message, args) => {
     const publicIp = require('public-ip');
     const exec = require('child_process').exec;
@@ -28,14 +31,14 @@ exports.run = (client, message, args) => {
         switch (args[0]) {
         case 'simple':
             exec('speedtest-cli --simple', (err, stdout, stderr) => {
-                if (err) console.log(err);
+                if (err) speedtestScope.error(err);
                 msg.edit(`\`\`\`${stdout}\`\`\``);
             });
             break;
         default:
             publicIp.v4().then(ip => {
                 exec('speedtest-cli', (err, stdout, stderr) => {
-                    if (err) console.log(err);
+                    if (err) speedtestScope.error(err);
                     stdout = stdout.replace(ip, getRandomIPInt());
                     stdout = stdout.replace('Linode', randISP);
                     msg.edit(`\`\`\`${stdout}\`\`\``);
