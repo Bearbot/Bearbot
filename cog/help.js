@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const { prefix } = require('../configs/bot/bearbot.json');
 const fs = require('fs');
+const helpScope = require('signale').scope('help');
 
 exports.run = (client, message, args) => {
     let command = args[0];
@@ -39,7 +40,7 @@ exports.run = (client, message, args) => {
         message.channel.send(embed);
     } catch (err) {
         message.channel.send('Encountered an error, are you sure that is a command?\nPlease make sure you\'re putting the actual command name instead of an alias.');
-        console.log(err.toString());
+        helpScope.error(err);
     }
 };
 
