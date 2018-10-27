@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
     
     if (!msg) msg = 'no reason provided.';
     
-    if (message.channel.permissionsFor(message.guild.me).has('KICK_MEMBERS') return message.channel.send('I don\'t have permission to do this, sorry.');
+    if (message.channel.permissionsFor(message.guild.me).has('KICK_MEMBERS')) return message.channel.send('I don\'t have permission to do this, sorry.');
     
     if (can_kick) {
         if (!user.kickable) return message.channel.send('I can\'t kick that user.');
