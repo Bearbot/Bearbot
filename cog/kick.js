@@ -3,25 +3,20 @@ exports.run = (client, message, args) => {
     let user = message.mentions.members.first();
     let msg = args.slice(1).join(' ');
 
-    if (typeof(user) === 'undefined') {
-        message.channel.send('I can\'t kick someone if you don\'t give me a person to kick.');
-        return;
-    }
-    if (!msg) {
-        message.channel.send('Please supply a reason.');
-        return;
-    }
-
+    if (!user) return message.channel.send('I can\'t kick someone if you don\'t give me a person to kick.');
+    
+    if (!user) return message.channel.send('I can\'t kick someone if you don\'t give me a person to kick.\nPlease use `b!help kick` to learn usage.');
+    
+    if (!msg) msg = 'no reason provided.';
+    
+    if (message.channel.permissionsFor(message.guild.me).has('KICK_MEMBERS') return message.channel.send('I don\'t have permission to do this, sorry.');
+    
     if (can_kick) {
-        if (!user.kickable) {
-            message.channel.send('I can\'t kick that user.');
-            return;
-        }
+        if (!user.kickable) return message.channel.send('I can\'t kick that user.');
         user.kick(msg);
-        message.channel.send('<:tickYes:315009125694177281> Done! User kicked.').then(
+        return message.channel.send('<:tickYes:315009125694177281> Done! User kicked.').then(
             msg => msg.delete(1000).catch(e => console.log(e))
         );
-        return;
     } else {
         message.reply('You don\'t have the permissions to do this, sorry.');
     }
