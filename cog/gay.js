@@ -16,14 +16,14 @@ exports.run = (client, message, args) => {
 
     let straightids = [
         '238913683030409226' // nice boy
-    ]
+    ];
 
     if (gayids.indexOf(message.author.id) > -1) {
         message.channel.send('my gay-o-meter says you\'re gay');
     } else if (message.author.id === config.owner) {
         message.channel.send('oh you\'re just a fucking retard to be honest');
     } else if(straightids.indexOf(message.author.id) > -1) {
-        message.channel.send('you\'re actually a fucking straight ass dude. hella bro!')
+        message.channel.send('you\'re actually a fucking straight ass dude. hella bro!');
     } else {
         let response = ['my gay-o-meter says you\'re gay', 'my gay-o-meter says you ain\'t gay'];
         message.channel.send(response[Math.floor(Math.random() * response.length)]);
