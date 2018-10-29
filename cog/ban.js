@@ -1,34 +1,24 @@
 exports.run = (client, message, args) => {
     let can_ban = message.channel.permissionsFor(message.member).has('BAN_MEMBERS', true);
     let user = message.mentions.members.first();
+    let time = args[1] || 7;
     let msg = args.slice(2).join(' ');
     
-    if (typeof(user) === 'undefined') {
-        message.channel.send('I can\'t ban someone if you don\'t give me a person to ban.\nPlease use `b!help ban` to learn usage.');
-        return;
-    }
-    if (!msg) {
-        message.channel.send('Please supply a reason.');
-        return;
-    }
-    if (!args[1]) {
-        message.channel.send('Please provide an amount of days of messages to delete.');
-        return;
-    }
+    if (!user) return message.channel.send('I can\'t ban someone if you don\'t give me a person to ban.\nPlease use `b!help ban` to learn usage.');
+
+    if (!msg) msg = 'no reason provided.';
+
+    if (message.channel.permissionsFor(message.guild.me).has('BAN_MEMBERS')) return message.channel.send('I don\'t have permission to do this, sorry.');
 
     if (can_ban) {
-        if (!user.bannable) {
-            message.channel.send('I can\'t ban that user.');
-            return;
-        }
+        if (!user.bannable) return message.channel.send('I can\'t ban that user.');
         user.ban({
-            days: args[2],
+            days: time,
             reason: msg
         });
-        message.channel.send('<:tickYes:315009125694177281> Done! User banned.').then(
+        return message.channel.send('<:tickYes:315009125694177281> Done! User banned.').then(
             msg => msg.delete(1000).catch(e => console.log(e))
         );
-        return;
     } else {
         message.reply('You don\'t have the permissions to do this, sorry.');
     }
