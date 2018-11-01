@@ -1,3 +1,4 @@
+const kickScope = require('signale').scope('kick');
 exports.run = (client, message, args) => {
     let can_kick = message.channel.permissionsFor(message.member).has('KICK_MEMBERS', true);
     let user = message.mentions.members.first();
@@ -14,8 +15,8 @@ exports.run = (client, message, args) => {
     if (can_kick) {
         if (!user.kickable) return message.channel.send('I can\'t kick that user.');
         user.kick(msg);
-        return message.channel.send('<:tickYes:315009125694177281> Done! User kicked.').then(
-            msg => msg.delete(1000).catch(e => console.log(e))
+        message.channel.send('<:tickYes:315009125694177281> Done! User kicked.').then(
+            msg => msg.delete(1000).catch(e => kickScope.error(e))
         );
     } else {
         message.reply('You don\'t have the permissions to do this, sorry.');

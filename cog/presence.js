@@ -1,4 +1,6 @@
 const config = require('../configs/bot/bearbot.json');
+const signale = require('signale');
+const presenceScope = signale.scope('presence');
 exports.run = (client, message, args) => {
     let validOptions = ['set', 'reset', 'settype'];
     let validPresence = ['online', 'offline', 'idle', 'dnd'];
@@ -16,12 +18,12 @@ exports.run = (client, message, args) => {
         client.user.setPresence({status: config.defaultpresence});
         client.user.setActivity(config.defaultgame, { type: config.defaulttype });
         message.channel.send('presence reset.').then(
-            response => response.delete(1000).catch(e => console.log(e))
-        ).catch(e => console.log(e));
+            response => response.delete(1000).catch(e => presenceScope.error(e))
+        ).catch(e => presenceScope.error(e));
         break;
     case 'settype':
         if (validType.indexOf(args[1]) < -1) {
-            message.channel.send('bitch ass that ain\'t a valid type');      
+            message.channel.send('not a valid type');      
         } else if (args[2] === undefined) {
             client.user.setActivity(this.client.presence.activity.name, { type: args[1] });
         } else {

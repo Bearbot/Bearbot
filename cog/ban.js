@@ -1,3 +1,4 @@
+const banScope = require('signale').scope('ban');
 exports.run = (client, message, args) => {
     let can_ban = message.channel.permissionsFor(message.member).has('BAN_MEMBERS', true);
     let user = message.mentions.members.first();
@@ -16,8 +17,8 @@ exports.run = (client, message, args) => {
             days: time,
             reason: msg
         });
-        return message.channel.send('<:tickYes:315009125694177281> Done! User banned.').then(
-            msg => msg.delete(1000).catch(e => console.log(e))
+        message.channel.send('<:tickYes:315009125694177281> Done! User banned.').then(
+            msg => msg.delete(1000).catch(e => banScope.error(e))
         );
     } else {
         message.reply('You don\'t have the permissions to do this, sorry.');

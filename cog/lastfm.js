@@ -2,7 +2,9 @@ const config = require('../configs/bot/bearbot.json'),
     base = 'http://ws.audioscrobbler.com/2.0',
     key = config.lfmkey,
     request = require('request'),
-    discord = require('discord.js');
+    discord = require('discord.js'),
+    signale = require('signale'),
+    lfmScope = signale.scope('lfm');
 let user;
 exports.run = (client, message, args) => {
 
@@ -25,7 +27,7 @@ exports.run = (client, message, args) => {
                 return;
             } else {
                 message.channel.send('Error');
-                console.log(err);
+                lfmScope.error({ prefix: 'scrobbling', message: err });
                 break;
             }
         } finally {
@@ -53,7 +55,7 @@ exports.run = (client, message, args) => {
                         message.channel.send('That user does not exist.');
                     } else {
                         message.channel.send('An error occurred. The Last.fm API may not be responding.');
-                        console.log(err);
+                        lfmScope.error({ prefix: 'scrobbling', message: err });
                     }
                 }
             });
@@ -71,7 +73,7 @@ exports.run = (client, message, args) => {
             fs.writeFile(`./configs/users/${message.author.id}.json`, json, (err) => {
                 if (err) {
                     message.channel.send('Something happened.');
-                    console.log(err);
+                    lfmScope.error({ prefix: 'set', message: err });
                 } else {
                     message.channel.send(`Your Last.fm username has been set to \`${args[1]}\`.`);
                 }
@@ -89,7 +91,7 @@ exports.run = (client, message, args) => {
                 return;
             } else {
                 message.channel.send('Error');
-                console.log(err);
+                lfmScope.error({ prefix: 'profile', message: err });
                 break;
             }
         } finally {
