@@ -3,7 +3,7 @@ const signale = require('signale');
 const speedtestScope = signale.scope('speedtest');
 
 exports.run = (client, message, args) => {
-    const publicIp = require('public-ip');
+    const axios = require('axios');
     const exec = require('child_process').exec;
 
     function getRandomIPInt() {
@@ -36,14 +36,16 @@ exports.run = (client, message, args) => {
             });
             break;
         default:
-            publicIp.v4().then(ip => {
-                exec('speedtest-cli', (err, stdout, stderr) => {
-                    if (err) speedtestScope.error(err);
-                    stdout = stdout.replace(ip, getRandomIPInt());
-                    stdout = stdout.replace('Linode', randISP);
-                    msg.edit(`\`\`\`${stdout}\`\`\``);
+            axios.get('https://ipv4.icanhazip.com')
+                .then(res => res.data)
+                .then(ip => {
+                    exec('speedtest-cli', (err, stdout, stderr) => {
+                        if (err) speedtestScope.error(err);
+                        stdout = stdout.replace(ip, getRandomIPInt());
+                        stdout = stdout.replace('Linode', randISP);
+                        msg.edit(`\`\`\`${stdout}\`\`\``);
+                    });
                 });
-            });
         }
     }
     );
