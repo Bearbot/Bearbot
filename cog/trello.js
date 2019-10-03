@@ -1,5 +1,5 @@
 exports.run = (client, message, args) => {
-    message.channel.send('<https://trello.com/bearbotdiscord>\n\nBug board: <https://trello.com/b/BayO1d2W/bugs>\nFeature progress board: <https://trello.com/b/uSUsEmN2/feature-progress>');
+    message.channel.send('The official Trello team for Bearbot is <https://trello.com/bearbotdiscord>.\n\nBug board: <https://trello.com/b/BayO1d2W/bugs>\nFeature progress board: <https://trello.com/b/uSUsEmN2/feature-progress>');
 };
 
 exports.conf = {
