@@ -21,7 +21,7 @@
     "discord.js": "^11.3.2",
     "erlpack": "github:discordapp/erlpack",
     "glob": "^7.1.2",
-    "libsodium-wrappers": "^0.7.3",
+    "libsodium-wrappers": "^0.7.6",
     "moment": "^2.22.1",
     "node-opus": "^0.3.0",
     "opusscript": "0.0.6",
