@@ -29,7 +29,7 @@
     "request": "^2.85.0",
     "signale": "^1.1.0",
     "uws": "^99.0.0",
-    "vm2": "^3.6.11"
+    "vm2": "^3.9.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.0",
