@@ -26,7 +26,7 @@
     "node-opus": "^0.3.0",
     "opusscript": "0.0.6",
     "public-ip": "^3.0.0",
-    "request": "^2.85.0",
+    "request": "^2.88.0",
     "signale": "^1.1.0",
     "uws": "^99.0.0",
     "vm2": "^3.6.11"
