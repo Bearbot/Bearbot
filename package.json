@@ -22,7 +22,7 @@
     "erlpack": "github:discordapp/erlpack",
     "glob": "^7.1.2",
     "libsodium-wrappers": "^0.7.3",
-    "moment": "^2.22.1",
+    "moment": "^2.29.4",
     "node-opus": "^0.3.0",
     "opusscript": "0.0.6",
     "public-ip": "^3.0.0",
