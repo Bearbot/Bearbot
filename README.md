@@ -1,5 +1,11 @@
 # Bearbot
 
+> Bearbot is no longer in active development due to lack of time and interest. I do not have plans to rewrite Bearbot to use the Slash Commands API, therefore the bot will not be online in the forseeable future.
+>
+> Thank you for using Bearbot while it lasted.
+
+---
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2267369eaca84cd68e72373266e7b72d)](https://app.codacy.com/app/reed/Bearbot?utm_source=github.com&utm_medium=referral&utm_content=plusreed/Bearbot&utm_campaign=badger)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Bearbot/Bearbot.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.com/Bearbot/Bearbot.svg?branch=master)](https://travis-ci.com/Bearbot/Bearbot)
